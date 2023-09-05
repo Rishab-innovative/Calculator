@@ -77,7 +77,7 @@ const calc = (v) => {
   }
   console.log(sign);
   console.log(arr);
-  for(var i=0;i<sign.length;i++) {
+  for(let i=0;i<sign.length;i++) {
     if (sign[i] === "*") {
       arr[i] = arr[i] * arr[i + 1];
       arr.splice(i + 1, 1);
