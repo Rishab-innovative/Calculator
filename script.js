@@ -1,35 +1,35 @@
-let cv = "";
-let arithmaticalop = 0;
-let display, sign, fixed;
+let initialValue = "";
+let arithmaticalOp = 0;
+let display, sign, numericalValue;
 
-const takevalue = (v) => {
+const takevalue = (value) => {
   display = document.getElementById('input');
   // if((v === "+" || v === "*" || v === "/") && display.value === "" ){
   //   display.slice(0,1);
   // }
-  if ((v === "+" || v === "-" || v === "*" || v === "/") && arithmaticalop === 0) {
+  if ((value === "+" || value === "-" || value === "*" || value === "/") && arithmaticalOp === 0) {
     display = document.getElementById('input');
-    display.value += v
-    arithmaticalop = 1;
-    cv = "";
+    display.value += value
+    arithmaticalOp = 1;
+    initialValue = "";
   }
   else {
-    if (!(v === "+" || v === "-" || v === "*" || v === "/")) {
+    if (!(value === "+" || value === "-" || value === "*" || value === "/")) {
       display = document.getElementById("input");
-      display.value += v;
-      cv += v;
-      arithmaticalop = 0;
+      display.value += value;
+      initialValue += value;
+      arithmaticalOp = 0;
     }
   }
 }
 
 const cancel = () => {
-  arithmaticalop = 0;
+  arithmaticalOp = 0;
 }
 const del = () => {
   display.value = "";
-  cv = "";
-  arithmaticalop = 0;
+  initialValue = "";
+  arithmaticalOp = 0;
 }
 
 const calculation = () => {
@@ -37,37 +37,37 @@ const calculation = () => {
   let functioneval = calc(inputdata.value);
   document.getElementById('input').value = functioneval;
 }
-const nodecimal = (v) => {
-  if (cv.length == 0) {
+const nodecimal = (value) => {
+  if (initialValue.length == 0) {
     display = document.getElementById("input");
     display.value += "0";
     console.log(display);
-    display.value += v;
-    cv += v;
+    display.value += value;
+    initialValue += value;
   }
-  if (!cv.includes(".")) {
+  if (!initialValue.includes(".")) {
     display = document.getElementById("input");
-    display.value += v;
-    cv += v;
+    display.value += value;
+    initialValue += value;
   }
 }
 
 
-const calc = (v) => {
-  sign = v.match(/[+\-*/]/g);
-  fixed = v.split(/[+\-*/]/).map(function (item) {
+const calc = (value) => {
+  sign = value.match(/[+\-*/]/g);
+  numericalValue = value.split(/[+\-*/]/).map(function (item) {
     return parseFloat(item);
-    // console.log(fixed);
+    // console.log(numericalValue);
   });
   let arr = [];
-  fixed.forEach((element) => {
+  numericalValue.forEach((element) => {
     if (typeof element === "number" && !isNaN(element)) {
       arr.push(element);
       // console.log(arr[0]);
     }
   });
-  if (v[0] == "-" || v[0] == "+") {
-    if (v[0] == "+") {
+  if (value[0] == "-" || value[0] == "+") {
+    if (value[0] == "+") {
       sign.splice(0, 1);
       // console.log(sign.splice(0, 1));
     } else {
