@@ -1,0 +1,178 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.calculator {
+    border: 1px solid grey;
+    padding: 1rem;
+    width: 30vw;
+    border: none; 
+    box-shadow: 1px 1px 5px 1px rgb(195, 194, 194);
+    height: 54vh;
+}
+
+.display {
+    width: 100%;
+    height: 9vh;
+}
+
+.display input {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 0.5rem;
+    border: 1px solid rgb(195, 194, 194);
+}
+
+.wrapper {
+    display: flex;
+    /* justify-content: space; */
+    /* border: 1px solid red; */
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+    min-height: 40vh;
+
+}
+
+.left-side {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.btn-operator,
+.btn-number {
+    display: flex;
+    height: 20%;
+    margin: 0.3rem 0;
+    /* border: 1px solid red; */
+    justify-content: space-between;
+}
+
+.btn-operator button {
+    background-color: rgb(225, 225, 225);
+}
+
+.btn-number button {
+    background-color: rgb(250, 250, 250);
+}
+
+.btn-operator button,
+.btn-number button {
+    width: 28%;
+    border: 1px solid rgb(195, 194, 194);
+    height: 100%;
+    font-size: 1.5rem;
+}
+
+
+.right-side {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.right-side button {
+    font-size: 2rem;
+
+}
+
+.dvd {
+    height: 18%;
+    margin: 0.3rem 0;
+    background-color: rgb(225, 225, 225);
+    border: 1px solid rgb(195, 194, 194);
+}
+
+.equal {
+    border: none;
+    margin: 0.3rem 0;
+    height: 82%;
+    background-color: rgb(66, 158, 255);
+    color: white;
+}
+input{
+    font-size:1.5rem;
+    padding-left:0.5rem;
+}
+
+@media screen and (min-width:1800px){
+    input{
+        font-size:2.5rem;
+        padding-left:1rem;
+    } 
+    .right-side button {
+        font-size: 4rem;
+    } 
+    
+.btn-operator button,
+.btn-number button{
+    font-size: 3rem;
+} 
+}
+@media (max-height:1190px) and (min-height:840px){
+    .calculator{
+        width:60vw;
+    }
+}
+@media screen and (max-width:1024px){
+    input{
+        font-size:1.2rem;
+        padding-left:0.5rem;
+    } 
+    .right-side button {
+        font-size: 1.5rem;
+    } 
+    
+.btn-operator button,
+.btn-number button{
+    font-size: 1rem;
+} 
+}
+
+@media screen and (max-width:768px){
+    input{
+        font-size:1rem;
+        padding-left:0.5rem;
+    }
+    .calculator{
+        width:45vw;
+    }
+    .wrapper{
+        gap:0.9rem;
+    }
+    .left-side{
+        width: 78%;
+    }
+    .right-side{
+        width: 22%;
+    }
+
+}
+@media screen and (max-width:600px){
+    .calculator{
+        width:60vw;
+    }
+}
+@media screen and (max-width:380px){
+    .calculator{
+        width:70vw;
+    }
+}
+@media screen and (max-width:330px){
+    .calculator{
+        width:80vw;
+    }
+}
